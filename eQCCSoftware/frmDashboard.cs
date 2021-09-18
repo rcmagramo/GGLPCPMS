@@ -7,6 +7,8 @@ namespace eQCCSoftware
 {
     public partial class frmDashboard : Form
     {
+        public event EventHandler ButtonDashboardFormClicked;
+
         public frmDashboard()
         {
             InitializeComponent();
@@ -35,7 +37,7 @@ namespace eQCCSoftware
             }
         }
 
-        private void hideSubmenu()
+        public void hideSubmenu()
         {
             panelSystemsSubMenu.Visible = false;
             panelProductionSubMenu.Visible = false;
@@ -55,7 +57,7 @@ namespace eQCCSoftware
 
         private Form currentForm = null;
 
-        private void openChildForm(Form childForm)
+        public void openChildForm(Form childForm)
         {
             if (currentForm != null)
             {

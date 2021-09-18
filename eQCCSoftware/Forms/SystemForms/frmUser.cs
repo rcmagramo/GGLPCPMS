@@ -16,5 +16,20 @@ namespace eQCCSoftware.Forms.SystemForms
         {
             InitializeComponent();
         }
+
+        private void btnNewUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

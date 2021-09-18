@@ -50,6 +50,8 @@
             this.Panel1 = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.text_Effect1 = new GGLPCPMS.UserControls.Text_Effect();
+            this.panelTitle.SuspendLayout();
             this.panelToolsSubmenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogo)).BeginInit();
             this.panelProductionSubMenu.SuspendLayout();
@@ -62,10 +64,11 @@
             // panelTitle
             // 
             this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
+            this.panelTitle.Controls.Add(this.text_Effect1);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitle.Location = new System.Drawing.Point(0, 0);
             this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(965, 15);
+            this.panelTitle.Size = new System.Drawing.Size(965, 45);
             this.panelTitle.TabIndex = 0;
             // 
             // lblUser
@@ -305,7 +308,7 @@
             this.btnProduction.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnProduction.Size = new System.Drawing.Size(278, 60);
             this.btnProduction.TabIndex = 3;
-            this.btnProduction.Text = "  PRODUCTION";
+            this.btnProduction.Text = "  PROPERTIES";
             this.btnProduction.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProduction.UseVisualStyleBackColor = true;
             this.btnProduction.Click += new System.EventHandler(this.btnProduction_Click);
@@ -371,10 +374,10 @@
             // panelChildForm
             // 
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(0, 15);
+            this.panelChildForm.Location = new System.Drawing.Point(0, 45);
             this.panelChildForm.Margin = new System.Windows.Forms.Padding(4);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(965, 721);
+            this.panelChildForm.Size = new System.Drawing.Size(965, 691);
             this.panelChildForm.TabIndex = 3;
             // 
             // panelSideMenu
@@ -396,6 +399,20 @@
             this.panelSideMenu.Size = new System.Drawing.Size(299, 736);
             this.panelSideMenu.TabIndex = 2;
             // 
+            // text_Effect1
+            // 
+            this.text_Effect1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
+            this.text_Effect1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.text_Effect1.Font = new System.Drawing.Font("Calibri", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_Effect1.ForeColor = System.Drawing.Color.Aqua;
+            this.text_Effect1.Location = new System.Drawing.Point(0, 0);
+            this.text_Effect1.Name = "text_Effect1";
+            this.text_Effect1.Set_Speed = 13;
+            this.text_Effect1.Size = new System.Drawing.Size(965, 45);
+            this.text_Effect1.TabIndex = 0;
+            this.text_Effect1.Text = "GGLPC PROPERTY MANAGEMENT SYSTEM";
+            this.text_Effect1.UseCompatibleTextRendering = true;
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -410,6 +427,7 @@
             this.Name = "frmDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.panelTitle.ResumeLayout(false);
             this.panelToolsSubmenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnLogo)).EndInit();
             this.panelProductionSubMenu.ResumeLayout(false);
@@ -445,6 +463,7 @@
         internal System.Windows.Forms.Panel Panel1;
         internal System.Windows.Forms.Panel panelChildForm;
         internal System.Windows.Forms.Panel panelSideMenu;
+        private GGLPCPMS.UserControls.Text_Effect text_Effect1;
     }
 }
 

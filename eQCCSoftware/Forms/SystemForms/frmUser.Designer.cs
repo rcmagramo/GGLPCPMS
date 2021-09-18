@@ -62,6 +62,7 @@
             this.btnRefresh.TabIndex = 8;
             this.btnRefresh.Text = "REFRESH";
             this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // Label1
             // 
@@ -87,6 +88,7 @@
             this.btnNewUser.TabIndex = 6;
             this.btnNewUser.Text = "NEW USER";
             this.btnNewUser.UseVisualStyleBackColor = false;
+            this.btnNewUser.Click += new System.EventHandler(this.btnNewUser_Click);
             // 
             // btnClose
             // 
@@ -102,6 +104,7 @@
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "CLOSE";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmUser
             // 

@@ -147,14 +147,5 @@ namespace eQCCSoftware.Forms.ProductionForms
                 throw ex;
             }
         }
-
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            base.OnFormClosing(e);
-            // code...
-            frmCustomer test = new frmCustomer();
-            test.fillgrid();
-
-        }
     }
 }
