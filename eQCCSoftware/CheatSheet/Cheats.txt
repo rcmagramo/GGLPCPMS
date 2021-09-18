@@ -1,0 +1,9 @@
+﻿Message Box
+===============================================================================
+ MessageBox.Show("your message",
+    "eQCC Software",
+    MessageBoxButtons.OK,
+    MessageBoxIcon.Warning // for Warning  
+                           //MessageBoxIcon.Error // for Error 
+                           //MessageBoxIcon.Information  // for Information
+                           //MessageBoxIcon.Question // for Question
