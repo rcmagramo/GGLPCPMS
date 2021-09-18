@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Windows.Forms;
 using eQCCSoftware.Forms.ProductionForms;
+using eQCCSoftware.Forms.SystemForms;
+using GGLPCPMS.Forms.SystemForms;
 using eQCCSoftware.Modules;
 
 namespace eQCCSoftware
 {
     public partial class frmDashboard : Form
     {
-        public event EventHandler ButtonDashboardFormClicked;
-
+       
         public frmDashboard()
         {
             InitializeComponent();
@@ -96,6 +97,12 @@ namespace eQCCSoftware
         private void btnCustomers_Click(object sender, EventArgs e)
         {
             openChildForm(new frmCustomer());
+            hideSubmenu();
+        }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmUser());
             hideSubmenu();
         }
     }

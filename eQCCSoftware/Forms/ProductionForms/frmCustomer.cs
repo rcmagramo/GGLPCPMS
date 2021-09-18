@@ -96,7 +96,6 @@ namespace eQCCSoftware.Forms.ProductionForms
             fcd.btnDelete.Visible = false;
             fcd.ShowDialog();
         }
-
         
         private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

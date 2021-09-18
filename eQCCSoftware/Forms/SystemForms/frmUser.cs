@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using GGLPCPMS.Forms.SystemForms;
 
 namespace eQCCSoftware.Forms.SystemForms
 {
@@ -19,7 +13,11 @@ namespace eQCCSoftware.Forms.SystemForms
 
         private void btnNewUser_Click(object sender, EventArgs e)
         {
-
+            frmUserDetails frmUD = new frmUserDetails();
+            frmUD.btnSave.Visible = true;
+            frmUD.btnUpdate.Visible = false;
+            frmUD.btnDelete.Visible = false;
+            frmUD.ShowDialog();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -29,7 +27,7 @@ namespace eQCCSoftware.Forms.SystemForms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-
+            this.Dispose();
         }
     }
 }

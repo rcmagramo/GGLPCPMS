@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboard));
             this.panelTitle = new System.Windows.Forms.Panel();
+            this.text_Effect1 = new GGLPCPMS.UserControls.Text_Effect();
             this.lblUser = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.panelToolsSubmenu = new System.Windows.Forms.Panel();
@@ -50,7 +51,6 @@
             this.Panel1 = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelSideMenu = new System.Windows.Forms.Panel();
-            this.text_Effect1 = new GGLPCPMS.UserControls.Text_Effect();
             this.panelTitle.SuspendLayout();
             this.panelToolsSubmenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogo)).BeginInit();
@@ -70,6 +70,20 @@
             this.panelTitle.Name = "panelTitle";
             this.panelTitle.Size = new System.Drawing.Size(965, 45);
             this.panelTitle.TabIndex = 0;
+            // 
+            // text_Effect1
+            // 
+            this.text_Effect1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
+            this.text_Effect1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.text_Effect1.Font = new System.Drawing.Font("Calibri", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_Effect1.ForeColor = System.Drawing.Color.Aqua;
+            this.text_Effect1.Location = new System.Drawing.Point(0, 0);
+            this.text_Effect1.Name = "text_Effect1";
+            this.text_Effect1.Set_Speed = 13;
+            this.text_Effect1.Size = new System.Drawing.Size(965, 45);
+            this.text_Effect1.TabIndex = 0;
+            this.text_Effect1.Text = "GGLPC PROPERTY MANAGEMENT SYSTEM";
+            this.text_Effect1.UseCompatibleTextRendering = true;
             // 
             // lblUser
             // 
@@ -290,6 +304,7 @@
             this.btnUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUsers.UseVisualStyleBackColor = true;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // btnProduction
             // 
@@ -398,20 +413,6 @@
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(299, 736);
             this.panelSideMenu.TabIndex = 2;
-            // 
-            // text_Effect1
-            // 
-            this.text_Effect1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(54)))), ((int)(((byte)(64)))));
-            this.text_Effect1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.text_Effect1.Font = new System.Drawing.Font("Calibri", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_Effect1.ForeColor = System.Drawing.Color.Aqua;
-            this.text_Effect1.Location = new System.Drawing.Point(0, 0);
-            this.text_Effect1.Name = "text_Effect1";
-            this.text_Effect1.Set_Speed = 13;
-            this.text_Effect1.Size = new System.Drawing.Size(965, 45);
-            this.text_Effect1.TabIndex = 0;
-            this.text_Effect1.Text = "GGLPC PROPERTY MANAGEMENT SYSTEM";
-            this.text_Effect1.UseCompatibleTextRendering = true;
             // 
             // frmDashboard
             // 
