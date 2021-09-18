@@ -10,7 +10,7 @@ namespace eQCCSoftware.Modules
 {
     public class modDeclaration
     {
-        public static string strsql = "Data Source=ENTERPRISE;Initial Catalog=eQCCDatabase;User ID=sa;Password=1DiCk@dm1n";
+        public static string strsql = "Data Source=ENTERPRISE;Initial Catalog=GGLPCData;User ID=sa;Password=1DiCk@dm1n";
         public static SqlConnection objconn = new SqlConnection(strsql);
         public static SqlCommand objcmd = new SqlCommand();
         public static SqlDataReader objdr;
