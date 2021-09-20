@@ -33,11 +33,17 @@
             this.Label1 = new System.Windows.Forms.Label();
             this.btnNewUser = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.Panel2 = new System.Windows.Forms.Panel();
+            this.lblCount = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Panel1.SuspendLayout();
+            this.Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel1
             // 
+            this.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Panel1.Controls.Add(this.btnRefresh);
             this.Panel1.Controls.Add(this.Label1);
             this.Panel1.Controls.Add(this.btnNewUser);
@@ -56,7 +62,7 @@
             this.btnRefresh.FlatAppearance.BorderSize = 0;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Location = new System.Drawing.Point(660, 8);
+            this.btnRefresh.Location = new System.Drawing.Point(656, 8);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(107, 29);
             this.btnRefresh.TabIndex = 8;
@@ -82,7 +88,7 @@
             this.btnNewUser.FlatAppearance.BorderSize = 0;
             this.btnNewUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewUser.ForeColor = System.Drawing.Color.White;
-            this.btnNewUser.Location = new System.Drawing.Point(547, 8);
+            this.btnNewUser.Location = new System.Drawing.Point(543, 8);
             this.btnNewUser.Name = "btnNewUser";
             this.btnNewUser.Size = new System.Drawing.Size(107, 29);
             this.btnNewUser.TabIndex = 6;
@@ -98,13 +104,50 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(773, 8);
+            this.btnClose.Location = new System.Drawing.Point(769, 8);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(107, 29);
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "CLOSE";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // Panel2
+            // 
+            this.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Panel2.Controls.Add(this.lblCount);
+            this.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Panel2.Location = new System.Drawing.Point(0, 418);
+            this.Panel2.Name = "Panel2";
+            this.Panel2.Size = new System.Drawing.Size(892, 35);
+            this.Panel2.TabIndex = 9;
+            // 
+            // lblCount
+            // 
+            this.lblCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblCount.AutoSize = true;
+            this.lblCount.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCount.Location = new System.Drawing.Point(12, 4);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.Size = new System.Drawing.Size(130, 21);
+            this.lblCount.TabIndex = 8;
+            this.lblCount.Text = "(0) records found";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 50);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(892, 368);
+            this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // frmUser
             // 
@@ -113,12 +156,17 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(892, 453);
             this.ControlBox = false;
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Panel2);
             this.Controls.Add(this.Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frmUser";
             this.Text = "USERLIST";
             this.Panel1.ResumeLayout(false);
             this.Panel1.PerformLayout();
+            this.Panel2.ResumeLayout(false);
+            this.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -130,5 +178,8 @@
         internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.Button btnNewUser;
         internal System.Windows.Forms.Button btnClose;
+        internal System.Windows.Forms.Panel Panel2;
+        internal System.Windows.Forms.Label lblCount;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

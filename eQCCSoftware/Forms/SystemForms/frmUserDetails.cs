@@ -7,6 +7,7 @@ namespace GGLPCPMS.Forms.SystemForms
 {
     public partial class frmUserDetails : Form
     {
+        public string _userId;
         public frmUserDetails()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace GGLPCPMS.Forms.SystemForms
             txtUsername.Focus();
         }
 
-        public void fillrolecombo()
+        private void fillrolecombo()
         {
             try
             {
@@ -48,21 +49,9 @@ namespace GGLPCPMS.Forms.SystemForms
             }
         }
 
-        private void txtpassword2_TextChanged(object sender, EventArgs e)
+        private void requiredField(String str)
         {
-            try
-            {
-                if (txtPassword.Text != txtpassword2.Text)
-                {
-                    MessageBox.Show("PASSWORD does not match", "GGLPC Software", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.ActiveControl = txtpassword2; 
-                    return;
-                }
-            }
-            catch (Exception ex) 
-            {
-                throw ex;
-            }
+            MessageBox.Show("Warning : " + str + " is required", "GGLPC Software", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -70,23 +59,54 @@ namespace GGLPCPMS.Forms.SystemForms
             clear();
         }
 
-        private void txtPassword_TextChanged(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txtpassword2.Text != "") 
+                if (txtUsername.Text == "") { this.ActiveControl = txtUsername; requiredField(txtUsername.Tag.ToString()); return; }
+                if (txtPassword.Text == "") { this.ActiveControl = txtPassword; requiredField(txtPassword.Tag.ToString()); return; }
+                if (txtpassword2.Text == "") { this.ActiveControl = txtpassword2; requiredField(txtpassword2.Tag.ToString()); return; }
+
+                if (txtPassword.Text != txtpassword2.Text)
                 {
-                    if (txtPassword.Text != txtpassword2.Text)
-                    {
-                        MessageBox.Show("PASSWORD does not match", "GGLPC Software", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        this.ActiveControl = txtPassword;
-                        return;
-                    }
+                    MessageBox.Show("PASSWORD does not match", "GGLPC Software", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.ActiveControl = txtpassword2;
+                    return;
                 }
+
+                if (txtPassword.Text != txtpassword2.Text)
+                {
+                    MessageBox.Show("PASSWORD does not match", "GGLPC Software", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.ActiveControl = txtPassword;
+                    return;
+                }
+
+                int comboIndex = cmbRole.SelectedIndex + 1;
+                if (comboIndex == -1)
+                {
+                    MessageBox.Show("Please choose a role", "GGLPC Software", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cmbRole.Focus();
+                    return;
+                }
+                else
+                {
+                    modDeclaration.objconn.Open();
+                    string strsql = "insert into tblUsers (username, userpassword,userroleid,isactive)" +
+                         " values (@val1,@val2,@val3,1)";
+                    SqlCommand objcmd = new SqlCommand(strsql, modDeclaration.objconn);
+                    objcmd.Parameters.AddWithValue("@val1", txtUsername.Text);
+                    objcmd.Parameters.AddWithValue("@val2", Crypto.Encrypt(txtPassword.Text, Crypto.key));
+                    objcmd.Parameters.AddWithValue("@val3", comboIndex);
+                    objcmd.ExecuteNonQuery();
+                    objcmd.Dispose();
+                    modDeclaration.objconn.Close();
+                    MessageBox.Show("User has been successfully saved!", "GGLPC Software", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message);
             }
         }
     }

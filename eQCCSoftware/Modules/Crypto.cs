@@ -12,6 +12,7 @@ namespace eQCCSoftware.Modules
 
         public static TripleDESCryptoServiceProvider DES = new TripleDESCryptoServiceProvider();
         public static MD5CryptoServiceProvider MD5 = new MD5CryptoServiceProvider();
+        public static string key = "@G0Ld3n_GGLPC";
 
         public static byte[] MD5Hash(string value)
         {

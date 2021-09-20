@@ -126,6 +126,7 @@
             this.btnSave.TabIndex = 18;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -175,7 +176,7 @@
             this.txtpassword2.Name = "txtpassword2";
             this.txtpassword2.Size = new System.Drawing.Size(698, 22);
             this.txtpassword2.TabIndex = 34;
-            this.txtpassword2.TextChanged += new System.EventHandler(this.txtpassword2_TextChanged);
+            this.txtpassword2.Tag = "RE-TYPE PASSWORD";
             // 
             // Label4
             // 
@@ -184,9 +185,9 @@
             this.Label4.ForeColor = System.Drawing.Color.Gray;
             this.Label4.Location = new System.Drawing.Point(35, 119);
             this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(153, 21);
+            this.Label4.Size = new System.Drawing.Size(166, 21);
             this.Label4.TabIndex = 33;
-            this.Label4.Text = "RE-TYPE PASSWORD";
+            this.Label4.Text = "CONFIRM PASSWORD";
             // 
             // txtPassword
             // 
@@ -194,7 +195,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(698, 22);
             this.txtPassword.TabIndex = 32;
-            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            this.txtPassword.Tag = "PASSWORD";
             // 
             // Label3
             // 
@@ -213,6 +214,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(698, 22);
             this.txtUsername.TabIndex = 30;
+            this.txtUsername.Tag = "USERNAME";
             // 
             // Label2
             // 
