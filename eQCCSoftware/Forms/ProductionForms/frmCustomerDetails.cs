@@ -123,7 +123,7 @@ namespace eQCCSoftware.Forms.ProductionForms
             try
             {
               
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this record", "eQCC Software", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this record", "GGLPC Software", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
                     modDeclaration.objconn.Open();

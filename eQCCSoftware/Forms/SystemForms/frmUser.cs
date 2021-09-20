@@ -18,6 +18,7 @@ namespace eQCCSoftware.Forms.SystemForms
         private void btnNewUser_Click(object sender, EventArgs e)
         {
             frmUserDetails frmUD = new frmUserDetails();
+            frmUD.txtUsername.Enabled = true;
             frmUD.btnSave.Visible = true;
             frmUD.btnUpdate.Visible = false;
             frmUD.btnDelete.Visible = false;
@@ -101,6 +102,7 @@ namespace eQCCSoftware.Forms.SystemForms
                     frmUD.txtPassword.Text = (string)(Crypto.Decrypt(withBlock[2, i].Value.ToString(),Crypto.key));
                     frmUD.txtpassword2.Text = (string)(Crypto.Decrypt(withBlock[2, i].Value.ToString(), Crypto.key));
                     frmUD.cmbRole.SelectedIndex = (int)(withBlock[5, i].Value) -1;
+                    frmUD.txtUsername.Enabled = false;
                     frmUD.btnSave.Visible = false;
                     frmUD.btnUpdate.Visible = true;
                     frmUD.btnDelete.Visible = true;
